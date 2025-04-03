@@ -1,0 +1,45 @@
+# Byte-compiled / compiled Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+
+# Virtual environment
+venv/
+env/
+
+# Environment variables and secrets
+.env
+*.env
+config.py
+instance/
+
+# Cache and logs
+*.log
+*.sqlite3
+db.sqlite3
+migrations/
+
+# VS Code settings
+.vscode/
+
+# Jupyter Notebook checkpoints (if applicable)
+.ipynb_checkpoints/
+
+# MacOS system files
+.DS_Store
+
+# PyCharm settings
+.idea/
+
+# Compiled C extensions
+*.o
+*.obj
+*.dll
+*.a
+*.lib
+
+# Flask-specific ignores
+instance/
