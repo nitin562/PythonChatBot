@@ -1,14 +1,17 @@
 import jwt
+import os
 from functools import wraps
 from flask import request,jsonify
 from Bot.responses import error
-import secrets
-# Generate a secure 256-bit (32-byte) key
-jwt_secret_key = secrets.token_hex(32)  
+
+
+jwt_secret_key = os.getenv("secret")
+algorithm=os.getenv("algorithm")
 
 
 def getJwt(payload):
-    return jwt.encode(payload=payload,key=jwt_secret_key,algorithm="HS256")
+    print(jwt_secret_key)
+    return jwt.encode(payload,jwt_secret_key,algorithm)
 
 # decorated as middleware
 def token_verify(f):

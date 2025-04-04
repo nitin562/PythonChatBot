@@ -28,4 +28,4 @@ def login_controller():
                 "id":user.id,
                 "email":user.email
             })
-        return success(200,"register",token)
+        return success(200,"login",token)

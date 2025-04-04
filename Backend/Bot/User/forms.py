@@ -39,9 +39,10 @@ class RegisterForm(FlaskForm):
 class LoginForm(FlaskForm):
     email=EmailField('email',validators=[DataRequired(),Email()])
     password=PasswordField('password',validators=[Length(min=6)])
-
-    def validate(self):
-        if not super().validate():
+    class Meta:
+        csrf=False
+    def validate(self,*args, **kwargs):
+        if not super().validate(*args, **kwargs):
             return False
         
         exist=User.query.filter_by(email=self.email.data).first()
