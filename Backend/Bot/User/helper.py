@@ -4,7 +4,6 @@ from functools import wraps
 from flask import request,jsonify
 from Bot.responses import error
 
-
 jwt_secret_key = os.getenv("secret")
 algorithm=os.getenv("algorithm")
 
