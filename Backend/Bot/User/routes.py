@@ -1,6 +1,7 @@
 from Bot import app
 from flask import request
 from .controller import register_controller,login_controller
+
 @app.route("/",methods=['POST'])
 @app.route("/login",methods=['POST'])
 def login():
